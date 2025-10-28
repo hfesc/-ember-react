@@ -3,6 +3,4 @@ import { ShadcnHome as ReactShadcnHome } from '../react-components/shadcn-home';
 
 const ShadcnHome = makeRenderable(ReactShadcnHome);
 
-<template>
-  <ShadcnHome />
-</template>
+<template><ShadcnHome /></template>

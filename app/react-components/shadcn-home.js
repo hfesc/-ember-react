@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import {
   ArrowRight,
   Check,
@@ -33,7 +33,12 @@ import { Separator } from './ui/separator';
 import { Switch } from './ui/switch';
 import { Tabs, TabsList, TabsTrigger } from './ui/tabs';
 import { Textarea } from './ui/textarea';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from './ui/tooltip';
 
 const navLinks = [
   { label: 'Docs', href: 'https://ui.shadcn.com/docs/installation' },
@@ -52,7 +57,14 @@ const exampleTabs = [
   { value: 'authentication', label: 'Authentication' },
 ];
 
-const logos = ['Vercel', 'Supabase', 'Linear', 'PlanetScale', 'Raycast', 'Aceternity'];
+const logos = [
+  'Vercel',
+  'Supabase',
+  'Linear',
+  'PlanetScale',
+  'Raycast',
+  'Aceternity',
+];
 
 const highlightCards = [
   {
@@ -94,7 +106,11 @@ const workflowBullets = [
 ];
 
 const avatars = [
-  { name: 'Cameron Nguyen', initials: 'CN', src: 'https://avatar.vercel.sh/cn' },
+  {
+    name: 'Cameron Nguyen',
+    initials: 'CN',
+    src: 'https://avatar.vercel.sh/cn',
+  },
   { name: 'Lana Rivers', initials: 'LR', src: 'https://avatar.vercel.sh/lr' },
   { name: 'Elliot Reyes', initials: 'ER', src: 'https://avatar.vercel.sh/er' },
 ];
@@ -109,7 +125,12 @@ function AnnouncementBar() {
         <span className="text-center text-sm text-muted-foreground">
           New Components: Field, Input Group, Item and more
         </span>
-        <Button variant="ghost" size="sm" className="group h-8 gap-1 px-3 text-sm text-foreground" asChild>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="group h-8 gap-1 px-3 text-sm text-foreground"
+          asChild
+        >
           <a href="https://ui.shadcn.com/docs/changelog">
             Explore updates
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -125,10 +146,16 @@ function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur">
       <div className="container flex h-16 items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <Button variant="ghost" size="icon" className="md:hidden text-muted-foreground">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden text-muted-foreground"
+          >
             <Menu className="h-5 w-5" />
           </Button>
-          <span className="text-lg font-semibold tracking-tight text-foreground">shadcn/ui</span>
+          <span className="text-lg font-semibold tracking-tight text-foreground">
+            shadcn/ui
+          </span>
         </div>
         <nav className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (
@@ -156,13 +183,21 @@ function SiteHeader() {
             <span className="hidden lg:inline">Search documentation...</span>
             <span className="lg:hidden">Search...</span>
             <span className="flex items-center gap-1 text-[10px] text-muted-foreground/80">
-              <span className="rounded-md border border-border/70 bg-background/60 px-1 py-0.5 font-semibold">⌘</span>
-              <span className="rounded-md border border-border/70 bg-background/60 px-1 py-0.5 font-semibold">K</span>
+              <span className="rounded-md border border-border/70 bg-background/60 px-1 py-0.5 font-semibold">
+                ⌘
+              </span>
+              <span className="rounded-md border border-border/70 bg-background/60 px-1 py-0.5 font-semibold">
+                K
+              </span>
             </span>
           </Button>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button variant="ghost" size="icon" className="hidden text-muted-foreground hover:text-foreground md:inline-flex">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="hidden text-muted-foreground hover:text-foreground md:inline-flex"
+              >
                 <LayoutDashboard className="h-4 w-4" />
               </Button>
             </TooltipTrigger>
@@ -170,7 +205,11 @@ function SiteHeader() {
           </Tooltip>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button variant="ghost" size="icon" className="hidden text-muted-foreground hover:text-foreground md:inline-flex">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="hidden text-muted-foreground hover:text-foreground md:inline-flex"
+              >
                 <Sun className="h-4 w-4" />
               </Button>
             </TooltipTrigger>
@@ -189,11 +228,17 @@ function SiteHeader() {
 function HeroSection() {
   return (
     <section className="relative overflow-hidden border-b border-border/60">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.14),_rgba(15,15,17,0.2)_45%,transparent_70%)]" aria-hidden />
+      <div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.14),_rgba(15,15,17,0.2)_45%,transparent_70%)]"
+        aria-hidden
+      />
       <div className="container relative grid gap-12 py-20 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:py-24">
         <div className="flex flex-col gap-10">
           <div className="space-y-6">
-            <Badge variant="secondary" className="w-max bg-secondary/30 text-xs uppercase tracking-[0.4em] text-muted-foreground">
+            <Badge
+              variant="secondary"
+              className="w-max bg-secondary/30 text-xs uppercase tracking-[0.4em] text-muted-foreground"
+            >
               Foundation
             </Badge>
             <div className="space-y-4">
@@ -201,7 +246,9 @@ function HeroSection() {
                 The Foundation for your Design System
               </h1>
               <p className="max-w-2xl text-balance text-base text-muted-foreground sm:text-lg">
-                A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code.
+                A set of beautifully designed components that you can customize,
+                extend, and build on. Start here then make it your own. Open
+                Source. Open Code.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3">
@@ -237,18 +284,30 @@ function HeroPreview() {
   const [activeExample, setActiveExample] = useState(exampleTabs[0].value);
   const [theme, setTheme] = useState('dark');
 
-  const themeLabel = useMemo(() => (theme === 'dark' ? 'Dark' : 'Light'), [theme]);
+  const themeLabel = useMemo(
+    () => (theme === 'dark' ? 'Dark' : 'Light'),
+    [theme],
+  );
   const activeLabel = useMemo(() => {
-    return exampleTabs.find((tab) => tab.value === activeExample)?.label ?? exampleTabs[0].label;
+    return (
+      exampleTabs.find((tab) => tab.value === activeExample)?.label ??
+      exampleTabs[0].label
+    );
   }, [activeExample]);
 
   return (
     <Card className="relative overflow-hidden border-border/70 bg-card/80 shadow-xl shadow-primary/10 backdrop-blur">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),transparent_60%)]" aria-hidden />
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),transparent_60%)]"
+        aria-hidden
+      />
       <CardContent className="relative z-10 space-y-6 p-6 lg:p-8">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap items-center gap-3">
-            <Badge variant="secondary" className="bg-secondary/30 text-secondary-foreground">
+            <Badge
+              variant="secondary"
+              className="bg-secondary/30 text-secondary-foreground"
+            >
               Examples
             </Badge>
             <div className="flex items-center gap-2 rounded-full border border-border/60 bg-muted/40 px-3 py-1 text-xs text-muted-foreground">
@@ -268,14 +327,22 @@ function HeroPreview() {
               <Copy className="h-3.5 w-3.5" />
               Copy Code
             </Button>
-            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-muted-foreground hover:text-foreground"
+            >
               <Wand2 className="h-4 w-4" />
             </Button>
           </div>
         </div>
         <div className="grid gap-6 lg:grid-cols-[220px_minmax(0,1fr)]">
           <div className="rounded-xl border border-border/60 bg-muted/20 p-2">
-            <Tabs value={activeExample} onValueChange={setActiveExample} className="w-full">
+            <Tabs
+              value={activeExample}
+              onValueChange={setActiveExample}
+              className="w-full"
+            >
               <TabsList className="grid w-full grid-cols-1 gap-2 bg-transparent">
                 {exampleTabs.map((tab) => (
                   <TabsTrigger
@@ -309,7 +376,9 @@ function PaymentExample({ exampleLabel }) {
           <span>{exampleLabel}</span>
         </div>
         <CardTitle className="text-lg">Payment Method</CardTitle>
-        <CardDescription>All transactions are secure and encrypted</CardDescription>
+        <CardDescription>
+          All transactions are secure and encrypted
+        </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
         <div className="grid gap-2">
@@ -320,7 +389,9 @@ function PaymentExample({ exampleLabel }) {
           <div className="grid gap-2">
             <Label htmlFor="card-number">Card Number</Label>
             <Input id="card-number" placeholder="•••• •••• •••• ••••" />
-            <p className="text-xs text-muted-foreground">Enter your 16-digit number.</p>
+            <p className="text-xs text-muted-foreground">
+              Enter your 16-digit number.
+            </p>
           </div>
           <div className="grid gap-2 sm:grid-cols-2">
             <div className="grid gap-2">
@@ -348,8 +419,12 @@ function PaymentExample({ exampleLabel }) {
           </div>
           <div className="flex items-center justify-between rounded-lg border border-border/60 bg-muted/20 px-4 py-3">
             <div>
-              <p className="text-sm font-medium text-foreground">Same as shipping address</p>
-              <p className="text-xs text-muted-foreground">Keep shipping and billing in sync</p>
+              <p className="text-sm font-medium text-foreground">
+                Same as shipping address
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Keep shipping and billing in sync
+              </p>
             </div>
             <Switch defaultChecked aria-label="Enable same address" />
           </div>
@@ -378,12 +453,17 @@ function SecondaryExamples() {
       <Card className="border-border/60 bg-background/80">
         <CardHeader className="pb-3">
           <CardTitle className="text-base">Team Members</CardTitle>
-          <CardDescription>Invite your team to collaborate on this project.</CardDescription>
+          <CardDescription>
+            Invite your team to collaborate on this project.
+          </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-3">
           <div className="flex items-center gap-2">
             {avatars.map((person) => (
-              <Avatar key={person.name} className="h-10 w-10 border border-border/60">
+              <Avatar
+                key={person.name}
+                className="h-10 w-10 border border-border/60"
+              >
                 <AvatarImage src={person.src} alt={person.name} />
                 <AvatarFallback>{person.initials}</AvatarFallback>
               </Avatar>
@@ -408,7 +488,9 @@ function SecondaryExamples() {
       <Card className="border-border/60 bg-background/80">
         <CardHeader className="pb-3">
           <CardTitle className="text-base">Usage</CardTitle>
-          <CardDescription>Set your budget range ($200 - $800).</CardDescription>
+          <CardDescription>
+            Set your budget range ($200 - $800).
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
@@ -442,7 +524,10 @@ function SecondaryExamples() {
             </p>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="prompt" className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            <Label
+              htmlFor="prompt"
+              className="text-xs uppercase tracking-[0.2em] text-muted-foreground"
+            >
               Prompt
             </Label>
             <Textarea id="prompt" placeholder="Add context" rows={2} />
@@ -488,14 +573,18 @@ function HighlightSection() {
   return (
     <section className="container space-y-12 py-24" id="features">
       <div className="mx-auto max-w-3xl text-center space-y-4">
-        <Badge variant="outline" className="mx-auto w-max bg-background/60 text-xs uppercase tracking-[0.4em] text-muted-foreground">
+        <Badge
+          variant="outline"
+          className="mx-auto w-max bg-background/60 text-xs uppercase tracking-[0.4em] text-muted-foreground"
+        >
           What&apos;s included
         </Badge>
         <h2 className="text-balance text-3xl font-semibold text-foreground sm:text-4xl">
           Beautifully designed, accessible components ready for production
         </h2>
         <p className="text-lg text-muted-foreground">
-          Every component lives in your project. Customize, extend, and ship with the tooling you already use.
+          Every component lives in your project. Customize, extend, and ship
+          with the tooling you already use.
         </p>
       </div>
       <div className="grid gap-6 lg:grid-cols-3">
@@ -519,17 +608,25 @@ function HighlightSection() {
 
 function WorkflowSection() {
   return (
-    <section className="border-y border-border/60 bg-background/70" id="workflow">
+    <section
+      className="border-y border-border/60 bg-background/70"
+      id="workflow"
+    >
       <div className="container grid gap-10 py-24 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] lg:items-start">
         <div className="space-y-5">
-          <Badge variant="secondary" className="w-max bg-secondary/30 text-secondary-foreground">
+          <Badge
+            variant="secondary"
+            className="w-max bg-secondary/30 text-secondary-foreground"
+          >
             Build with intent
           </Badge>
           <h2 className="text-balance text-3xl font-semibold text-foreground sm:text-4xl">
             Copy. Paste. Tweak. Ship.
           </h2>
           <p className="text-lg text-muted-foreground">
-            Start with sensible defaults that match the shadcn/ui design language. Refine interactions in Ember while leaning on React components from the ecosystem.
+            Start with sensible defaults that match the shadcn/ui design
+            language. Refine interactions in Ember while leaning on React
+            components from the ecosystem.
           </p>
           <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
@@ -546,7 +643,9 @@ function WorkflowSection() {
           {workflowBullets.map(({ title, description }) => (
             <Card key={title} className="border-border/60 bg-card/80">
               <CardHeader className="space-y-3">
-                <CardTitle className="text-lg text-foreground">{title}</CardTitle>
+                <CardTitle className="text-lg text-foreground">
+                  {title}
+                </CardTitle>
                 <CardDescription className="text-base leading-relaxed text-muted-foreground">
                   {description}
                 </CardDescription>
@@ -562,18 +661,25 @@ function WorkflowSection() {
 function CalloutSection() {
   return (
     <section className="relative overflow-hidden py-24">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(59,130,246,0.18),_rgba(59,130,246,0)_70%)]" aria-hidden />
+      <div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(59,130,246,0.18),_rgba(59,130,246,0)_70%)]"
+        aria-hidden
+      />
       <div className="container relative">
         <Card className="mx-auto max-w-4xl border-border/60 bg-card/80 text-center shadow-xl">
           <CardHeader className="space-y-4">
-            <Badge variant="secondary" className="mx-auto w-max bg-secondary/30 text-secondary-foreground">
+            <Badge
+              variant="secondary"
+              className="mx-auto w-max bg-secondary/30 text-secondary-foreground"
+            >
               Open Source
             </Badge>
             <CardTitle className="text-3xl font-semibold text-foreground sm:text-4xl">
               Start here then make it your own
             </CardTitle>
             <CardDescription className="text-lg text-muted-foreground">
-              Generate components with the CLI, render them inside Ember with @universal-ember/react, and publish confidently.
+              Generate components with the CLI, render them inside Ember with
+              @universal-ember/react, and publish confidently.
             </CardDescription>
           </CardHeader>
           <CardFooter className="flex flex-col items-center justify-center gap-3 pb-10">
@@ -603,24 +709,39 @@ function Footer() {
       <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
         <span>
           Built by{' '}
-          <a className="text-foreground hover:underline" href="https://shadcn.com">
+          <a
+            className="text-foreground hover:underline"
+            href="https://shadcn.com"
+          >
             shadcn
           </a>{' '}
           at{' '}
-          <a className="text-foreground hover:underline" href="https://vercel.com">
+          <a
+            className="text-foreground hover:underline"
+            href="https://vercel.com"
+          >
             Vercel
           </a>
           . The source code is available on{' '}
-          <a className="text-foreground hover:underline" href="https://github.com/shadcn-ui/ui">
+          <a
+            className="text-foreground hover:underline"
+            href="https://github.com/shadcn-ui/ui"
+          >
             GitHub
           </a>
           .
         </span>
         <div className="flex items-center gap-3">
-          <a className="hover:text-foreground" href="https://ui.shadcn.com/docs/installation">
+          <a
+            className="hover:text-foreground"
+            href="https://ui.shadcn.com/docs/installation"
+          >
             Docs
           </a>
-          <a className="hover:text-foreground" href="https://github.com/universal-ember/react">
+          <a
+            className="hover:text-foreground"
+            href="https://github.com/universal-ember/react"
+          >
             universal-ember/react
           </a>
         </div>

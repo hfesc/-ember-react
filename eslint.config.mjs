@@ -19,16 +19,18 @@ import ember from 'eslint-plugin-ember/recommended';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import qunit from 'eslint-plugin-qunit';
 import n from 'eslint-plugin-n';
+import react from 'eslint-plugin-react';
 
 import babelParser from '@babel/eslint-parser';
 
 const esmParserOptions = {
-  ecmaFeatures: { modules: true },
+  ecmaFeatures: { modules: true, jsx: true },
   ecmaVersion: 'latest',
   requireConfigFile: false,
   babelOptions: {
     plugins: [
       ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
+      '@babel/plugin-transform-react-jsx',
     ],
   },
 };
@@ -69,6 +71,22 @@ export default [
     },
   },
   {
+    files: ['app/react-components/**/*.js'],
+    plugins: {
+      react,
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+    rules: {
+      'react/react-in-jsx-scope': 'off',
+      'react/jsx-uses-react': 'off',
+      'react/jsx-uses-vars': 'error',
+    },
+  },
+  {
     files: ['tests/**/*-test.{js,gjs}'],
     plugins: {
       qunit,
@@ -89,6 +107,8 @@ export default [
       '.stylelintrc.js',
       '.template-lintrc.js',
       'ember-cli-build.js',
+      'postcss.config.js',
+      'tailwind.config.js',
     ],
     plugins: {
       n,
